@@ -1,0 +1,418 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f7fc;
+  color: #1e293b;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  background: #ffffff;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.03),
+    0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  font-size: 1.55rem;
+  letter-spacing: -0.3px;
+  color: #0f3b5c;
+}
+
+.logo i {
+  font-size: 1.8rem;
+  color: #2c7da0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #2c3e50;
+  transition: 0.2s ease;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-links a i {
+  font-size: 0.9rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #2c7da0;
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-content {
+  flex: 1;
+  max-width: 1280px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+/* ========== CARDS ========== */
+.form-card,
+.feedback-list-card {
+  background: white;
+  border-radius: 28px;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+  padding: 2rem 1.8rem;
+  margin-bottom: 2.5rem;
+  transition: all 0.2s;
+}
+
+.form-card h2,
+.feedback-list-card h2 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-left: 5px solid #2c7da0;
+  padding-left: 1rem;
+}
+
+/* ========== FORM STYLES ========== */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #1e3a5f;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  background: #fefefe;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2c7da0;
+  box-shadow: 0 0 0 3px rgba(44, 125, 160, 0.2);
+}
+
+/* Rating Group */
+.rating-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: #f8fafc;
+  padding: 0.7rem 1rem;
+  border-radius: 60px;
+}
+
+.rating-option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  background: white;
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  border: 1px solid #e2e8f0;
+  transition: 0.1s;
+}
+
+.rating-option.selected {
+  background: #2c7da0;
+  border-color: #2c7da0;
+  color: white;
+}
+
+.rating-option input {
+  width: auto;
+  margin: 0;
+  accent-color: #2c7da0;
+  width: 18px;
+  height: 18px;
+}
+
+.rating-option label {
+  margin: 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Submit Button */
+.btn-submit {
+  background: #0f3b5c;
+  color: white;
+  border: none;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-submit:hover {
+  background: #1e5a7a;
+  transform: translateY(-2px);
+}
+
+/* ========== FEEDBACK CARDS ========== */
+.feedback-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.feedback-item {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 1.4rem 1.6rem;
+  border: 1px solid #eef2f8;
+  transition: 0.1s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.feedback-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feedback-rating {
+  background: #f1f5f9;
+  padding: 0.25rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.feedback-category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: #e6f0f5;
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  color: #155a7a;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.feedback-message {
+  margin: 0.8rem 0;
+  color: #2d3e50;
+  word-break: break-word;
+  line-height: 1.45;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  color: #5f7d9c;
+  margin-top: 0.5rem;
+  border-top: 1px solid #ecf3f9;
+  padding-top: 0.8rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #b91c1c;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 30px;
+  transition: 0.1s;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.delete-btn:hover {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #f9fbfd;
+  border-radius: 28px;
+  color: #5b7a9a;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  background: #0b2a3b;
+  color: #cbd5e1;
+  margin-top: 2rem;
+  padding: 2rem 2rem 1.5rem;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  border-top: 1px solid #1e4a6b;
+  padding-top: 1.2rem;
+}
+
+/* ========== TOAST NOTIFICATION ========== */
+.toast-msg {
+  visibility: hidden;
+  min-width: 250px;
+  background-color: #0f3b5c;
+  color: #fff;
+  text-align: center;
+  border-radius: 40px;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  transition:
+    visibility 0.2s,
+    opacity 0.2s;
+  opacity: 0;
+}
+
+.toast-msg.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .form-card,
+  .feedback-list-card {
+    padding: 1.5rem;
+  }
+
+  .rating-group {
+    gap: 0.5rem;
+  }
+
+  .rating-option {
+    padding: 0.2rem 0.8rem;
+  }
+
+  .main-content {
+    padding: 0 1.2rem;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .feedback-header {
+    flex-direction: column;
+  }
+
+  .btn-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}
